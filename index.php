@@ -146,12 +146,11 @@
         <div class="people__container text-center">
             <h2 class="drinks__title-sm">Our People</h2>
 
-
-            <?php
-                $i = 0;
-                $posts = count(get_field('people'));
-            ?>
             <?php if( have_rows('people') ): ?>
+                <?php
+                    $i = 0;
+                    $posts = count(get_field('people'));
+                ?>
                 <?php while( have_rows('people') ) : the_row(); ?>
                     <?php if ($i == 0): ?>
                         <div class="people__row">
