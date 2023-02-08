@@ -1,0 +1,45 @@
+.people__container {
+    margin-bottom: 5rem;
+}
+
+.people__row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.people__col {
+    flex: 1 0 240px;
+    max-width: 240px;
+    margin-bottom: 2rem;
+}
+
+.people__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    margin: 0 auto 1.5rem;
+}
+
+.people__title {
+    font-family: 'Veneer Clean Soft', sans-serif;
+    font-size: 1.75rem;
+    color: var(--yellow);
+    margin-bottom: 0.25rem;
+}
+
+.people__text {
+    font-size: 1.125rem;
+    color: var(--white);
+}
+
+@media (min-width: 1200px) {
+    .people__row:first-of-type {
+        margin-left: -7.5rem;
+    }
+
+    .people__row:last-of-type {
+        margin-left: 7.5rem;
+    }
+}

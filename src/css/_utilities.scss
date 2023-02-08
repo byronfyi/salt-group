@@ -1,0 +1,98 @@
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.bg-white {
+    background-color: var(--white);
+}
+
+.bg-black {
+    background-color: var(--black);
+}
+
+.bg-gray {
+    background-color: var(--gray);
+}
+
+.bg-teal {
+    background-color: var(--teal);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.text-yellow {
+    color: var(--yellow);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.text-lg {
+    font-size: 6rem;
+}
+
+.text-sm {
+    font-size: 1.5rem;
+}
+
+.title-sm {
+    font-size: 2rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.max-w-prose {
+    max-width: 68ch;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-4 {
+    margin-bottom: 4rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.eapps-link.eapps-link {
+    display: none !important;
+}

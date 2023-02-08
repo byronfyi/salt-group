@@ -1,0 +1,89 @@
+:root {
+    --yellow: #FFB600;
+    --teal: #307978;
+    --pink: #F05CA7;
+    --green: #329B37;
+    --black: #000;
+    --white: #fff;
+    --gray: #C8C8C8;
+}
+
+::selection {
+    background-color: var(--pink);
+}
+
+::-moz-selection {
+    background-color: var(--pink);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background: var(--black);
+    min-width: 375px;
+    height: 3000px;
+    margin: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+h1, h2, h3 {
+    font-family: 'Veneer Clean Soft', sans-serif;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+.section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.body__text {
+    font-size: 1rem;
+}
+
+.body__text--sm {
+    font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+    .icons li {
+        flex: 1 0 25%;
+        max-width: 25%;
+    }
+
+    .body__text {
+        font-size: 1.25rem;
+    }
+
+    .body__text--sm {
+        font-size: 1.125rem;
+    }
+}

@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "Veneer Clean";
+    font-weight: 400;
+    src: url("../public/fonts/VeneerClean-Reg.eot"); /* IE9*/
+    src: url("../public/fonts/VeneerClean-Reg.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../public/fonts/VeneerClean-Reg.woff2") format("woff2"), /* chrome、firefox */
+    url("../public/fonts/VeneerClean-Reg.woff") format("woff"), /* chrome、firefox */
+    url("../public/fonts/VeneerClean-Reg.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../public/fonts/VeneerClean-Reg.svg#VeneerClean-Reg") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+    font-family: "Veneer Clean Soft";
+    font-weight: 400;
+    src: url("../public/fonts/VeneerClean-Soft.eot"); /* IE9*/
+    src: url("../public/fonts/VeneerClean-Soft.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../public/fonts/VeneerClean-Soft.woff2") format("woff2"), /* chrome、firefox */
+    url("../public/fonts/VeneerClean-Soft.woff") format("woff"), /* chrome、firefox */
+    url("../public/fonts/VeneerClean-Soft.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../public/fonts/VeneerClean-Soft.svg#VeneerClean-Soft") format("svg"); /* iOS 4.1- */
+}

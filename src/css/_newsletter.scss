@@ -1,0 +1,21 @@
+.newsletter__row {
+    margin-bottom: 7rem;
+}
+
+.newsletter__col {
+    flex: auto;
+}
+
+.newsletter__image {
+    display: block;
+    max-width: 630px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 3rem;
+}
+
+@media (min-width: 1200px) {
+    .newsletter__col {
+        flex: 1 0 0%;
+    }
+}

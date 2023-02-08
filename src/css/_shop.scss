@@ -1,0 +1,59 @@
+.shop__carousel {
+    background-color: var(--white);
+    padding: 0.5rem 0;
+    margin-top: 2.5rem;
+}
+
+.shop__carousel img {
+    max-width: 240px;
+    height: auto;
+}
+
+.shop__carousel p {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
+}
+
+.reviews__row {
+    margin-top: 8rem;
+}
+
+.reviews__col {
+    color: var(--white);
+    text-align: center;
+    flex: auto;
+    max-width: 320px;
+    margin: 0 auto 5rem;
+}
+
+.reviews__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.reviews__position {
+    font-size: 1.125rem;
+    color: var(--yellow);
+    margin-bottom: 0.25rem;
+}
+
+.reviews__text {
+    font-size: 0.875rem;
+}
+
+.reviews__stars {
+    max-width: 120px;
+}
+
+@media (min-width: 768px) {
+    .shop__carousel img {
+        max-width: 300px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .shop__carousel img {
+        max-width: 360px;
+    }
+}
