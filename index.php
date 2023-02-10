@@ -2,11 +2,15 @@
 
 <section>
     <div class="hero paralax">
-        <div class="paralax-bg">
-            <video autoplay loop muted>
-                <source src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/video-oakwood.mp4" type="video/mp4">
-            </video>
-        </div>
+        <?php if( get_field('hero_video') ): ?>
+            <div class="hero__video">
+                <video autoplay loop muted>
+                    <source src="<?php the_field('hero_video'); ?>" type="video/mp4">
+                </video>
+            </div>
+        <?php else: ?>
+            <div class="paralax-bg"></div>
+        <?php endif; ?>
         
         <h1 class="sr-only">Salt Beer</h1>
 
@@ -117,30 +121,29 @@
         </div>
     </div>
 
-    <div class="splide splide__salt salt__carousel drinks__carousel">
-        <div class="splide__track">
-            <ul class="splide__list">
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-                <li class="splide__slide">
-                    <img src="https://placehold.co/460x416.png" alt="" width="230" height="208">
-                </li>
-            </ul>
+    <?php if( have_rows('venues') ): ?>
+        <div class="splide splide__salt salt__carousel drinks__carousel">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <?php while( have_rows('venues') ) : the_row(); ?>
+                        <?php if( get_sub_field('venue_image') ): ?>
+                            <li class="splide__slide">
+                                <?php if( get_sub_field('venue_url') ): ?>
+                                    <a href="<?php echo get_sub_field('venue_url') ?>">
+                                <?php endif; ?>
+
+                                    <img src="<?php echo get_sub_field('venue_image') ?>" alt="" width="230" height="208">
+                                
+                                <?php if( get_sub_field('venue_url') ): ?>
+                                    </a>
+                                <?php endif; ?>
+                            </li>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                </ul>
+            </div>
         </div>
-    </div>
+    <?php endif; ?>
 
     <div class="container">
         <div class="people__container text-center">

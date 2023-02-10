@@ -1,6 +1,7 @@
 .hero {
     width: 100%;
     background: url('../public/images/bg-hero-mobile.jpg') no-repeat center var(--black);
+    background-size: cover;
 }
 
 .paralax {
@@ -21,6 +22,10 @@
     background-size: cover;
     background-position: 50% 0px;
     background-repeat: no-repeat;
+}
+
+.hero__video {
+    display: none;
 }
 
 .hero__title {
@@ -89,7 +94,7 @@
 
 @media (min-width: 768px) {
     .hero {
-        background: none;
+        background-image: none;
     }
 
     .paralax {
@@ -98,15 +103,13 @@
 
     .paralax-bg {
         display: flex;
-        background-image: none;
+        background: url('../public/images/bg-hero.jpg') no-repeat center fixed var(--black);
+        background-size: cover;
+        z-index: 0;
     }
 
-    .paralax-bg video {
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .paralax::after {
+    .paralax::after,
+    .hero__video::after {
         content: '';
         position: absolute;
         top: 0;
@@ -115,6 +118,24 @@
         left: 0;
         background-color: rgba(0, 0, 0, 0.25);
         z-index: -1;
+    }
+
+    .hero__video {
+        display: flex;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .hero__video::after {
+        z-index: 0;
+    }
+
+    .hero__video video {
+        width: 100%;
+        object-fit: cover;
     }
 
     .hero__title {
