@@ -1,7 +1,7 @@
 const stickyHeader = () => {
     let scrollpos = window.scrollY;
     const header = document.querySelector(".header");
-    const offsetHeight = 180;
+    const offsetHeight = 100;
 
     const addClassOnScroll = (className) => header.classList.add(className);
     const removeClassOnScroll = (className) => header.classList.remove(className);

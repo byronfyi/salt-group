@@ -68,14 +68,23 @@
 
 .news__image {
     display: block;
-    max-width: 157px;
-    height: auto;
+    width: 157px;
+    height: 180px;
     margin-left: auto;
     margin-right: auto;
     position: absolute;
     top: -90px;
     left: 50%;
     transform: translateX(-50%);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    background-color: var(--pink);
+}
+
+.news__image img {
+    width: calc(100% - 8px);
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    position: relative;
+    top: 4px;
 }
 
 @media (min-width: 768px) {
@@ -113,8 +122,9 @@
     }
 
     .news__image {
-        max-width: 180px;
-        top: -104px;
+        width: 200px;
+        height: 229px;
+        top: -116px;
     }
 
     .news__title {

@@ -224,34 +224,37 @@
 
         <h2 class="news__heading">Latest News</h2>
 
-        <div class="row news__row">
-            <div class="col news__col">
-                <div class="news__item">
-                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-news-1.png" alt="" class="news__image" width="180" height="210">
-                    <h3 class="news__title">SALT Craft + Cocktails heads to Leeds Riverside this Winter</h3>
-                    <p class="news__text">The award-winning SALT Taps team are back bringing craft beer, cocktails ‘on tap’, and good vibes to Calls Landing this winter, adding tap no. 9 to their impressive portfolio. SALT has had an amazing year of success, with bars now spread across the North with two in London – Deptford...</p>
-                    <div class="news__btn"><a href="#" class="btn btn-sm btn--pink">Read more</a></div>
-                </div>
+        <?php 
+           // the query
+           $the_query = new WP_Query( array(
+             'category_name' => 'news',
+              'posts_per_page' => 3,
+           )); 
+        ?>
+
+        <?php if ( $the_query->have_posts() ) : ?>
+            <div class="row news__row">
+                <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                    <div class="col news__col">
+                        <div class="news__item">
+                            <?php if ( has_post_thumbnail() ): ?>
+                                <div class="news__image">
+                                    <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                                </div>
+                            <?php endif; ?>
+
+                            <h3 class="news__title"><?php the_title(); ?></h3>
+                            <div class="news__text"><?php the_excerpt(); ?></div>
+                            <div class="news__btn"><a href="<?php the_permalink(); ?>" class="btn btn-sm btn--pink">Read more</a></div>
+                        </div>
+                    </div>
+                <?php endwhile; ?>
             </div>
 
-            <div class="col news__col">
-                <div class="news__item">
-                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-news-2.png" alt="" class="news__image" width="180" height="210">
-                    <h3 class="news__title">SALT is coming to Oakwood</h3>
-                    <p class="news__text">You heard it here first folks! We're bringing our unique brand of craft, cocktails from some great friends, and good times to North Leeds this November, adding tap no. 8 to our impressive portfolio. Having enjoyed great success in recent years, with venues across Saltaire, Granary Wharf...</p>
-                    <div class="news__btn"><a href="#" class="btn btn-sm btn--pink">Read more</a></div>
-                </div>
-            </div>  
-
-            <div class="col news__col">
-                <div class="news__item">
-                    <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-news-3.png" alt="" class="news__image" width="180" height="210">
-                    <h3 class="news__title">Raising a glass to our own evolution!</h3>
-                    <p class="news__text">Over many months, we’ve been working hard behind the scenes to bring you a brand-new look to the SALT brand. In order to evolve with the times and champion our craft, it was time to get our heads...</p>
-                    <div class="news__btn"><a href="#" class="btn btn-sm btn--pink">Read more</a></div>
-                </div>
-            </div>
-        </div>
+            <?php wp_reset_postdata(); ?>
+        <?php else : ?>
+            <p><?php __('No News'); ?></p>
+        <?php endif; ?>
 
         <p class="text-center"><a href="#" class="btn btn-sm btn--pink">See all our news</a></p>
     </div>
