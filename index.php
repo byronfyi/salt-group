@@ -238,9 +238,9 @@
                     <div class="col news__col">
                         <div class="news__item">
                             <?php if ( has_post_thumbnail() ): ?>
-                                <div class="news__image">
+                                <a class="news__image" href="<?php the_permalink(); ?>">
                                     <img src="<?php the_post_thumbnail_url(); ?>" alt="">
-                                </div>
+                                </a>
                             <?php endif; ?>
 
                             <h3 class="news__title"><?php the_title(); ?></h3>
