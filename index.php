@@ -360,12 +360,18 @@
                 <h3 class="contact__title">Contact Us</h3>
 
                 <ul class="social contact__contact">
-                    <li>
-                        <a href="mailto:info@saltbeerfactory.co.uk"><span class="icon"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32v80 32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm64 192c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"/></svg></span>info@saltbeerfactory.co.uk</a>
-                    </li>
-                    <li>
-                        <a href="tel:01274533848"><span class="icon"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span> 01274 533 848</a>
-                    </li>
+                    <?php if( get_field('contact_email') ): ?>
+                        <li>
+                            <a href="mailto:<?php the_field('contact_email'); ?>"><span class="icon"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 64C150 64 64 150 64 256s86 192 192 192c17.7 0 32 14.3 32 32s-14.3 32-32 32C114.6 512 0 397.4 0 256S114.6 0 256 0S512 114.6 512 256v32c0 53-43 96-96 96c-29.3 0-55.6-13.2-73.2-33.9C320 371.1 289.5 384 256 384c-70.7 0-128-57.3-128-128s57.3-128 128-128c27.9 0 53.7 8.9 74.7 24.1c5.7-5 13.1-8.1 21.3-8.1c17.7 0 32 14.3 32 32v80 32c0 17.7 14.3 32 32 32s32-14.3 32-32V256c0-106-86-192-192-192zm64 192c0-35.3-28.7-64-64-64s-64 28.7-64 64s28.7 64 64 64s64-28.7 64-64z"/></svg></span><?php the_field('contact_email'); ?></a>
+                        </li>
+                    <?php endif; ?>
+
+                    <?php if( get_field('contact_phone') ): ?>
+                        <li>
+                            <?php $phone = str_replace(' ', '', get_field('contact_phone')); ?>
+                            <a href="tel:<?php echo $phone; ?>"><span class="icon"><svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg></span><?php the_field('contact_phone'); ?></a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -376,47 +382,23 @@
     <div class="container faqs__container">
         <h2 class="faqs__title">Faqs</h2>
 
-        <button class="faqs__btn js-accordion"><span>How do I get my product stocked in your bars?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>Please email <a href="mailto:info@saltbeerfactory.co.uk">info@saltbeerfactory.co.uk</a></p>
-            </div>
-        </div>
+        <?php if( have_rows('faqs') ): ?>
+            <?php while( have_rows('faqs') ) : the_row(); ?>
+                <?php if( get_sub_field('faqs_question') ): ?>
+                    <button class="faqs__btn js-accordion">
+                        <span><?php echo get_sub_field('faqs_question') ?></span>
+                    </button>
+                <?php endif; ?>
 
-        <button class="faqs__btn js-accordion"><span>I have a PR request, who should I contact?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>Please email <a href="mailto:marketing@saltbeerfactory.co.uk">marketing@saltbeerfactory.co.uk</a></p>
-            </div>
-        </div>
-
-        <button class="faqs__btn js-accordion"><span>Which is my nearest SALT bar?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>You can find your nearest SALT bar <a href="#">here</a></p>
-            </div>
-        </div>
-
-        <button class="faqs__btn js-accordion"><span>How do I buy your beers online?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>You can buy our delicious beers <a href="#">here</a></p>
-            </div>
-        </div>
-
-        <button class="faqs__btn js-accordion"><span>Can I buy a gift voucher for one of your bars?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>Please pop into any of our SALT taps to buy a gift voucher.</p>
-            </div>
-        </div>
-
-        <button class="faqs__btn js-accordion"><span>I have some feedback about one of your bars, who should I email?</span></button>
-        <div class="faqs__content">
-            <div class="faqs__text">
-                <p>Please email us at <a href="mailto:info@saltbeerfactory.co.uk">info@saltbeerfactory.co.uk</a></p>
-            </div>
-        </div>
+                <?php if( get_sub_field('faqs_answer') ): ?>
+                    <div class="faqs__content">
+                        <div class="faqs__text">
+                            <?php echo get_sub_field('faqs_answer') ?>
+                        </div>
+                    </div>
+                <?php endif; ?>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 
     <div class="container">
