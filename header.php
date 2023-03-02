@@ -58,7 +58,7 @@
                         </li>
                         <li>
                             <a href="/sheffield" class="header__nav-link" data-image="salt-sheffield">
-                                <span>SHEFFIELD</span>
+                                <span>SALT SHEFFIELD</span>
                             </a>
                         </li>
                         <li>

@@ -320,7 +320,6 @@
                     <div class="news__item work__item">
                         <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-join.png" alt="" class="news__image" width="180" height="210">
                         <h3 class="news__title">MANAGEMENT</h3>
-                        <p class="news__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in</p>
                         <div class="news__btn"><a href="#" class="btn btn-sm btn--black">View openings</a></div>
                     </div>
                 </div>
@@ -329,7 +328,6 @@
                     <div class="news__item work__item">
                         <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-join.png" alt="" class="news__image" width="180" height="210">
                         <h3 class="news__title">BAR, FLOOr + kitchen</h3>
-                        <p class="news__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in</p>
                         <div class="news__btn"><a href="#" class="btn btn-sm btn--black">View openings</a></div>
                     </div>
                 </div>  
@@ -338,7 +336,6 @@
                     <div class="news__item work__item">
                         <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-join.png" alt="" class="news__image" width="180" height="210">
                         <h3 class="news__title">Support office</h3>
-                        <p class="news__text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in </p>
                         <div class="news__btn"><a href="#" class="btn btn-sm btn--black">View openings</a></div>
                     </div>
                 </div>
@@ -407,10 +404,11 @@
                 <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-newsletter.jpg" alt="" class="newsletter__image">
             </div>
 
+
             <div class="col newsletter__col">
                 <!-- Begin Mailchimp Signup Form -->
                 <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-                <style>
+                <style type="text/css">
                     #mc_embed_signup {
                         color: #fff;
                         clear: left;
@@ -433,7 +431,7 @@
                     #mc_embed_signup .helper_text {
                         background-color: transparent;
                     }
-                    #mc_embed_signup .mc-field-group label:not(.checkbox) {
+                    #mc_embed_signup .mc-field-group .form-label {
                         position: absolute;
                         width: 1px;
                         height: 1px;
@@ -449,7 +447,11 @@
                         border: 0;
                         padding: 0.5rem;
                     }
-                    #mc_embed_signup .datefield input, #mc_embed_signup .phonefield-us input {
+                    #mc_embed_signup .datefield {
+                        padding-top: 0;
+                    }
+                    #mc_embed_signup .datefield input,
+                    #mc_embed_signup .phonefield-us input {
                         width: 70px;
                     }
                     #mc_embed_signup .datefield .monthfield input,
@@ -499,7 +501,7 @@
                     }
                     /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
                        We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                
+                    
                     #mc-embedded-subscribe-form input[type=checkbox] {
                         display: inline;
                         width: auto;
@@ -529,22 +531,21 @@
                     }
                 </style>
                 <div id="mc_embed_signup">
-                    <form action="https://wearefyi.us11.list-manage.com/subscribe/post?u=4b70cb67ae8d64a4dfffa8ba5&amp;id=9d2fd3922c&amp;v_id=4382&amp;f_id=00e5b6e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                    <form action="https://saltbeerfactory.us19.list-manage.com/subscribe/post?u=2b8fd8fdc5dfb7bcd0b96f156&amp;id=75c8b66731&amp;v_id=4465&amp;f_id=00f6aae4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                         <div id="mc_embed_signup_scroll">
                             <h2>Newsletter Sign Up</h2>
                             <div class="mc-field-group">
-                                <label for="mce-FNAME">Name</label>
+                                <label for="mce-FNAME" class="form-label">Name</label>
                                 <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="Name">
                                 <span id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
                             </div>
                             <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email Address</label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" required placeholder="Email">
+                                <label for="mce-EMAIL" class="form-label">Email Address</label>
+                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email" required>
                                 <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
                             </div>
-                            
                             <div class="mc-field-group size1of2">
-                                <label for="mce-MMERGE8-month">Date of Birth </label>
+                                <label for="mce-MMERGE8-month" class="dob">Date of Birth</label>
                                 <div class="datefield">
                                     <span class="subfield dayfield">
                                         <input class="datepart " type="text" pattern="[0-9]*" value="" placeholder="DD" size="2" maxlength="2" name="MMERGE8[day]" id="mce-MMERGE8-day">
@@ -559,39 +560,29 @@
                                 </div>
                                 <span id="mce-MMERGE8-HELPERTEXT" class="helper_text"></span>
                             </div>
-
                             <div id="mergeRow-gdpr" class="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group">
                                 <div class="content__gdpr">
                                     <label>Marketing Permissions</label>
-                                    <p>Please select all the ways you would like to hear from We Are FYI:</p>
+                                    <p>Please select all the ways you would like to hear from SALT:</p>
                                     <fieldset class="mc_fieldset gdprRequired mc-field-group" name="interestgroup_field">
-                                    <label class="checkbox subfield" for="gdpr_46522"><input type="checkbox" id="gdpr_46522" name="gdpr[46522]" value="Y" class="av-checkbox "><span>Email</span> </label>
+                                    <label class="checkbox subfield" for="gdpr_122105"><input type="checkbox" id="gdpr_122105" name="gdpr[122105]" value="Y" class="av-checkbox gdpr"><span>Email</span> </label>
                                     </fieldset>
                                     <p>You can unsubscribe at any time by clicking the link in the footer of our emails. For information about our privacy practices, please visit our website.</p>
                                 </div>
-
                                 <div class="content__gdprLegal">
                                     <p>We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <a href="https://mailchimp.com/legal/terms" target="_blank">Learn more about Mailchimp's privacy practices here.</a></p>
                                 </div>
                             </div>
-                            
-                            <div id="mce-responses" class="clear foot">
+                            <div id="mce-responses" class="clear">
                                 <div class="response" id="mce-error-response" style="display:none"></div>
                                 <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div><!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_4b70cb67ae8d64a4dfffa8ba5_9d2fd3922c" tabindex="-1" value=""></div>
-
-                            <div class="optionalParent">
-                                <div class="clear foot">
-                                    <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                                </div>
-                            </div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_2b8fd8fdc5dfb7bcd0b96f156_75c8b66731" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                         </div>
                     </form>
                 </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                <script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[8]='MMERGE8';ftypes[8]='date';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='MMERGE5';ftypes[5]='address';fnames[6]='MMERGE6';ftypes[6]='birthday';fnames[7]='WSO';ftypes[7]='text';fnames[8]='MMERGE8';ftypes[8]='date';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
                 <!--End mc_embed_signup-->
             </div>
         </div>
@@ -620,15 +611,15 @@
                 </li>
                 <li class="splide__slide">
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-can-5.jpg" alt="" width="360" height="360">
-                    <p>ALPACA DDH IPA</p>
+                    <p>TRAM DOUBLE NEIPA</p>
                 </li>
                 <li class="splide__slide">
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-can-6.jpg" alt="" width="360" height="360">
-                    <p>IKAT DDH DIPA</p>
+                    <p>ALPACA DDH IPA</p>
                 </li>
                 <li class="splide__slide">
                     <img src="<?php echo get_bloginfo( 'template_directory' ); ?>/public/images/img-can-7.jpg" alt="" width="360" height="360">
-                    <p>TRAM DOUBLE NEIPA</p>
+                    <p>IKAT DDH DIPA</p>
                 </li>
             </ul>
         </div>
